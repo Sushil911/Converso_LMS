@@ -24,17 +24,17 @@ const CompanionsList = ({title,companions,className}:CompanionsListProps) => {
     <article className={cn('companion-list',className)}>
       <h2 className='font-bold text-3xl'>{title}</h2>
       <Table>
-  <TableHeader>
-    <TableRow>
-      <TableHead className="text-lg w-2/3">Lessons</TableHead>
-      <TableHead className='text-lg'>Subject</TableHead>
-      <TableHead className='text-lg'>Duration</TableHead>
-    </TableRow>
-  </TableHeader>
-  <TableBody>
-      {companions?.map(({id,subject,name,topic,duration})=>(
-        <TableRow key={id}>
-          <TableCell>
+        <TableHeader>
+          <TableRow>
+            <TableHead className="text-lg w-2/3">Lessons</TableHead>
+            <TableHead className='text-lg'>Subject</TableHead>
+            <TableHead className='text-lg'>Duration</TableHead>
+          </TableRow>
+        </TableHeader>
+        <TableBody>
+          {companions?.map(({id,subject,name,topic,duration})=>(
+          <TableRow key={id}>
+            <TableCell>
               <Link href={`/companions/${id}`}>
                   <div className='flex items-center gap-2'>
                       <div className='size-[72px] flex items-center justify-center rounded-lg max_md:hidden'
@@ -56,8 +56,8 @@ const CompanionsList = ({title,companions,className}:CompanionsListProps) => {
                       </div>
                   </div>
               </Link>
-          </TableCell>
-          <TableCell>
+            </TableCell>
+            <TableCell>
             <div className='subject-badge w-fit max-md:hidden'>
               {subject}
             </div>
@@ -69,8 +69,8 @@ const CompanionsList = ({title,companions,className}:CompanionsListProps) => {
                 height={18}
                 />
             </div>
-          </TableCell>
-          <TableCell>
+            </TableCell>
+            <TableCell>
             <div className='flex items-center gap-2 w-full justify-end'>
               <p className='text-2xl'>
                 {duration} {'  '}
@@ -82,8 +82,8 @@ const CompanionsList = ({title,companions,className}:CompanionsListProps) => {
                 width={14} height={14} className='md:hidden'
               />
             </div>
-          </TableCell>
-        </TableRow>
+            </TableCell>
+          </TableRow>
       ))}
   </TableBody>
 </Table>
